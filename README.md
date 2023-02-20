@@ -1,17 +1,15 @@
-<h1>Run App</h1>
+# Run App
 
-- Open Docker Desktop
+- Open Docker Desktop and start container *postgres-spring*
 
-- Start container <b>postgres-spring</b>
-
-- Open terminal in project root
-<code>mvn spring-boot:run</code>
+- Open terminal in project root and run ```mvn spring-boot:run```
+- Open new terminal in ```/frontend``` directory and run ```npm start```
 
 ---
 
-<h2>Usage</h2>
+## Usage
 
-Use Postman to send requests to <code>localhost:8080/api/person/</code>
+Use Postman to send requests to ```localhost:8080/api/person/```
 
 
 | Request Type | Endpoint    | Body                       | Description                                 |
@@ -24,23 +22,27 @@ Use Postman to send requests to <code>localhost:8080/api/person/</code>
 
 ---
 
-<h3>Initial Docker Setup</h3>
+### Initial Docker Setup
 
 - Open Docker Desktop
 
 - Create docker container
-<code>docker run --name postgres-spring -e POSTGRES_PASSWORD=password -d -p 5432:5432 postgres</code>
+```docker run --name postgres-spring -e POSTGRES_PASSWORD=password -d -p 5432:5432 postgres```
 
 - Start container
-<code>docker start postgres-spring</code>
+```docker start postgres-spring```
 
-- Copy container id from <code>docker ps</code> and enter container by pasting id
-<code>docker exec -it {CONTAINER_ID} bin/bash</code>
+- Copy container id from ```docker ps``` and enter container by pasting id
+```docker exec -it {CONTAINER_ID} bin/bash```
 
 - Login with user "postgres"
-<code>psql -U postgres</code>
+```psql -U postgres```
 
 - Create database named "demodb"
-<code>CREATE DATABASE demodb;</code>
+```CREATE DATABASE demodb;```
 
-- View created db with <code>\l</code> and connect with <code>\c demodb</code>
+- View created db with ```\l``` and connect with ```\c demodb```
+
+### Initial React Setup
+
+- Open terminal in ```/frontend``` directory and run ```npm install```
