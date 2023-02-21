@@ -1,6 +1,6 @@
-import logo from './logo.svg';
 import './App.css';
 import React, {Component} from "react";
+import PersonTable from "./PersonTable.js";
 
 class App extends Component {
   state = {
@@ -18,15 +18,7 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <div className="App-intro">
-            <h2>Persons</h2>
-            {persons.map(person => 
-              <div key={person.id}>
-                ID: {person.id} // Name: {person.name}
-              </div>
-            )}
-          </div>
+          <PersonTable arrayInput={persons}/>
         </header>
       </div>
     )
