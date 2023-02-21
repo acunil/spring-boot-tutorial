@@ -12,7 +12,7 @@ import Paper from '@mui/material/Paper';
 export default function BasicTable({arrayInput}) {
   return (
     <TableContainer component={Paper} sx={{ maxWidth: 600 }}>
-      <h1>Person Database</h1>
+      <h1>Person Table</h1>
       <Table aria-label="simple table">
         <TableHead>
           <TableRow >

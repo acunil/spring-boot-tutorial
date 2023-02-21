@@ -1,6 +1,7 @@
 import './App.css';
 import React, {Component} from "react";
 import PersonTable from "./PersonTable.js";
+import PersonList from './PersonList';
 
 class App extends Component {
   state = {
@@ -8,7 +9,7 @@ class App extends Component {
   };
 
   async componentDidMount() {
-    const response = await fetch('/api/v1/person');
+    const response = await fetch('person');
     const body = await response.json();
     this.setState({persons: body});
   }
@@ -18,7 +19,8 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <PersonTable arrayInput={persons}/>
+          {/* <PersonTable arrayInput={persons}/> */}
+          <PersonList />
         </header>
       </div>
     )
