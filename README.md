@@ -7,21 +7,6 @@
 
 ---
 
-## Usage
-
-Use Postman to send requests to ```localhost:8080/api/person/```
-
-
-| Request Type | Endpoint    | Body                       | Description                                 |
-|--------------|-------------|----------------------------|---------------------------------------------|
-| GET          | /           | null                       | Get all entries in db                       |
-| GET          | /{valid_id} | null                       | Get person matching id                      |
-| POST         | /           | ```{"name": "John Doe"}``` | Add new person with randomly generated UUID |
-| PUT          | /{valid_id} | ```{"name": "Jane Day"}``` | Update person with id                       |
-| DELETE       | /{valid_id} | null                       | Delete person with id                       |
-
----
-
 ### Initial Docker Setup
 
 - Open Docker Desktop
@@ -46,3 +31,18 @@ Use Postman to send requests to ```localhost:8080/api/person/```
 ### Initial React Setup
 
 - Open terminal in ```/frontend``` directory and run ```npm install```
+
+---
+
+### API Endpoints
+
+Use Postman to send requests to ```localhost:8080/api/person/```
+
+
+| Request Type | Endpoint    | Body                       | Description                                 |
+|--------------|-------------|----------------------------|---------------------------------------------|
+| GET          | /           | null                       | Get all entries in db                       |
+| GET          | /{valid_id} | null                       | Get person matching id                      |
+| POST         | /           | ```{"name": "John Doe"}``` | Add new person with randomly generated UUID |
+| PUT          | /{valid_id} | ```{"name": "Jane Day"}``` | Update person with id                       |
+| DELETE       | /{valid_id} | null                       | Delete person with id                       |
