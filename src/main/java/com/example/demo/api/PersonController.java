@@ -11,7 +11,7 @@ import java.util.List;
 import java.util.UUID;
 
 @SuppressWarnings("unused")
-@RequestMapping("api/v1/person")
+@RequestMapping("person")
 @RestController
 public class PersonController {
 

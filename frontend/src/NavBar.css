@@ -1,0 +1,7 @@
+.navButton {
+    cursor: pointer !important;
+}
+
+.navButton:hover {
+    color: cornflowerblue !important;
+}
