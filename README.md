@@ -5,6 +5,7 @@
 - Open terminal in project root and run ```mvn spring-boot:run```
 - Open new terminal in ```/frontend``` directory and run ```npm start```
 
+![App screenshot](./src/main/resources/img/app-screenshot.png "Person List")
 ---
 
 ### Initial Docker Setup
