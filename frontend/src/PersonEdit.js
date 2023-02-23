@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import { Link, withRouter } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 import { Button, Container, Form, FormGroup, Input, Label } from 'reactstrap';
-// import AppNavbar from './AppNavbar';
+import AppNavbar from './AppNavbar';
 
 class PersonEdit extends Component {
 
@@ -56,7 +56,7 @@ class PersonEdit extends Component {
         const title = <h2>{item.id ? 'Edit Person' : 'Add Person'}</h2>;
     
         return <div>
-            {/* <AppNavbar/> */}
+            <AppNavbar/>
             <Container>
                 {title}
                 <Form onSubmit={this.handleSubmit}>
@@ -66,8 +66,8 @@ class PersonEdit extends Component {
                                onChange={this.handleChange} autoComplete="name"/>
                     </FormGroup>
                     <FormGroup>
-                        <Button color="primary" type="submit">Save</Button>{' '}
-                        <Button color="secondary" tag={Link} to="/clients">Cancel</Button>
+                        <Button color="primary" type="submit" onClick={() => {window.location.href="/person"}} >Save</Button>{' '}
+                        <Button color="secondary" onClick={() => {window.location.href="/person"}} >Cancel</Button>
                     </FormGroup>
                 </Form>
             </Container>

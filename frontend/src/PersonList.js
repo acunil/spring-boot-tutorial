@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import { Button, ButtonGroup, Container } from 'reactstrap';
-import { Link } from 'react-router-dom';
+import { Button } from 'reactstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrashCan, faPenToSquare } from '@fortawesome/free-solid-svg-icons';
 import Table from '@mui/material/Table';
@@ -45,18 +44,6 @@ class PersonList extends Component {
         if (isLoading) {
             return <p>Loading...</p>;
         }
-    
-        const personListOriginal = persons.map(person => {
-            return <tr key={person.id}>
-                <td style={{whiteSpace: 'nowrap'}}>{person.name}</td>
-                <td>
-                    <ButtonGroup>
-                        <Button size="sm" color="primary" tag={Link} to={"/person/" + person.id}>Edit</Button>
-                        <Button size="sm" color="danger" onClick={() => this.remove(person.id)}>Delete</Button>
-                    </ButtonGroup>
-                </td>
-            </tr>
-        });
 
         const personList = persons.map((person) => (
             <TableRow
@@ -67,15 +54,17 @@ class PersonList extends Component {
                 {person.name}
               </TableCell>
               <TableCell>{person.id}</TableCell>
-              <TableCell><FontAwesomeIcon icon={ faPenToSquare } style={{ color:"cornflowerblue", cursor:"pointer"}} tag={Link} to={"/person/" + person.id} /></TableCell>
+              <TableCell><FontAwesomeIcon icon={ faPenToSquare } style={{ color:"cornflowerblue", cursor:"pointer"}} onClick={() => {window.location.href="/person/" + person.id}} /></TableCell>
               <TableCell><FontAwesomeIcon icon={faTrashCan} style={{ color:"crimson", cursor:"pointer" }} onClick={() => this.remove(person.id)}/></TableCell>
             </TableRow>
           ));
     
-        return <div>
+        return <div >
             <AppNavbar/>
-            <TableContainer component={Paper} sx={{ maxWidth: 600 }}>
+            <div style={{padding:20}}>
+
                 <h1>Person List</h1>
+            <TableContainer component={Paper} sx={{ maxWidth: 600 }}>
                 <Table aria-label="simple table">
                 <TableHead>
                     <TableRow >
@@ -88,6 +77,8 @@ class PersonList extends Component {
                 </TableBody>
                 </Table>
             </TableContainer>
+            <Button onClick={() => {window.location.href="/person/add"}} style={{marginTop:20}}>Add</Button>
+            </div>
         </div>
         
     }

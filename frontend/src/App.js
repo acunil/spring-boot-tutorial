@@ -13,6 +13,7 @@ class App extends Component {
             <Route path='/' exact={true} component={Home}/>
             <Route path='/person' exact={true} component={PersonList}/>
             <Route path='/person/:id' component={PersonEdit}/>
+            <Route path='/person/add' component={PersonEdit}/>
           </Switch>
         </Router>
     )

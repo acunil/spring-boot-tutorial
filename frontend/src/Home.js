@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
 import AppNavbar from './AppNavbar';
-import { Link } from 'react-router-dom';
 import { Button, Container } from 'reactstrap';
 
 class Home extends Component {
@@ -10,7 +9,7 @@ class Home extends Component {
             <div>
                 <AppNavbar/>
                 <Container fluid>
-                    <Button color="link"><Link to="/person">Persons</Link></Button>
+                    <Button color="link" onClick={() => {window.location.href="/person"}}>Persons</Button>
                 </Container>
             </div>
         );
